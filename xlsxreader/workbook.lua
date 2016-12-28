@@ -181,7 +181,7 @@ function M.load(filename)
 	local self = {}
 	self.archive = assert(zip.unzip(filename), "Can't open " ..  filename)
 	self.sharedstrings = {}
-	local ok, sharedstrings = pcall(read_xml, self, "xl/sharedstrings.xml")
+	local ok, sharedstrings = pcall(read_xml, self, "xl/sharedStrings.xml")
 	if ok then
 		read_sharedstrings(sharedstrings[2], self.sharedstrings)
 	end
